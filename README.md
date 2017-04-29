@@ -10,3 +10,9 @@ Run on SSH
 Display, only on LOCAL!! Use tab to complete command
 
 `python pacman.py --replay recorded-`
+
+Add/Remove record file to git. Use tab to complete command
+
+`git add recorded-*/*`
+
+`git rv recorded-*/*`
