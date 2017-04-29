@@ -1,4 +1,4 @@
 # PacmanReinforcementLearning
-python pacman.py -p ApproximateQAgent -a extractor=SimpleExtractor -l originalClassic -x 50 -r test1
+python pacman.py -p ApproximateQAgent -a extractor=SimpleExtractor -l originalClassic -q -n 50 -r 2017_04_29_18
 
-python pacman.py --replay recorded-test1/recorded-game-5
+python pacman.py --replay recorded-
