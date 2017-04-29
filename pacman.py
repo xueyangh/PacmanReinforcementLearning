@@ -572,6 +572,11 @@ def readCommand( argv ):
     args['timeout'] = options.timeout
 
     # Special case: recorded games don't use the runGames method or args structure
+    if options.record != None:
+        try:
+            os.makedirs('recorded-' + options.record)
+        except OSError as exc:
+            raise
     if options.gameToReplay != None:
         print 'Replaying recorded game %s.' % options.gameToReplay
         import cPickle
@@ -649,10 +654,6 @@ def runGames( layout, pacman, ghosts, display, numGames, record, numTraining = 0
         if record != None:
             import time, cPickle
             fname = ('recorded-' + record + '/recorded-game-%d' % (i + 1))
-            try:
-                os.makedirs('recorded-' + record)
-            except OSError as exc:
-                raise
             f = file(fname, 'w')
             components = {'layout': layout, 'actions': game.moveHistory}
             cPickle.dump(components, f)
